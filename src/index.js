@@ -1,16 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Navbar from './Navbar';
-import Main from './MainContainer';
 import MainContainer from './MainContainer';
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Vid from './Next';
 
-const App=()=>{
+const App = () => {
   return <div className='app'>
-    <Navbar/>
-    <MainContainer/>
+    <Navbar />
+    <Outlet/>
   </div>
 }
+const ways = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>,
+    children: [
+      {
+        path: "/",
+        element: <MainContainer/>
+      },
+      {
+        path: "/video/:id",
+        element: <Vid/>
+      }
+    ]
+  },
+
+])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App/>);
+root.render(<RouterProvider router={ways} />);
 

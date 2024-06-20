@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
-
+import Shimmer from "./shimmer"
+import { Link } from "react-router-dom"
 const Video = (props) => {
     return <div className="video-container">
-        <img className="thumnail" src={props.data.snippet.thumbnails.high.url}/>
-      <p>{props.data.snippet.title}</p>
+        <img className="thumnail" src={props.data.snippet.thumbnails.high.url} />
+        <p>{props.data.snippet.title}</p>
     </div>
 }
 
@@ -17,27 +18,32 @@ const RightContainer = () => {
     }
     useEffect(() => {
         tube()
-    },[])
-    return <div className="right-container">
-        <div className="right-container-content">
-            <div className="btn-flex">
-                <button className="global-btn btn1">News</button>
-                <button className="global-btn btn1">Java Script</button>
-                <button className="global-btn btn1">Cricket</button>
-                <button className="global-btn btn1">Telugu Movies</button>
-                <button className="global-btn btn1">Sports</button>
-                <button className="global-btn btn1">Nature</button>
-            </div>
-            <div className="video-flex">
-                {
-                    videoArray.map((x) => {
-                        return <Video key={x.id} data={x}/>
+    }, [])
+    if (videoArray.length == 0) {
+        return <Shimmer />
+    } else {
+        return <div className="right-container">
+            <div className="right-container-content">
+                <div className="btn-flex">
+                    <button className="global-btn btn1">News</button>
+                    <button className="global-btn btn1">Java Script</button>
+                    <button className="global-btn btn1">Cricket</button>
+                    <button className="global-btn btn1">Telugu Movies</button>
+                    <button className="global-btn btn1">Sports</button>
+                    <button className="global-btn btn1">Nature</button>
+                </div>
+                <div className="video-flex">
+                    {
+                        videoArray.map((x) => {
+                            return <Link to={"/video/"+x.id}><Video key={x.id} data={x} /></Link>
 
-                    })
-                }
+                        })
+                    }
+                </div>
             </div>
         </div>
-    </div>
+    }
+
 }
 
 

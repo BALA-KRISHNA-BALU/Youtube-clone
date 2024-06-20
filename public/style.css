@@ -102,7 +102,6 @@ body{
     border-radius: 10px;
     cursor: pointer;
     color: white;
-    /* border: 2px solid grey; */
 
 }
 .video-flex{
@@ -156,7 +155,6 @@ img{
     font-size: 15px;
     border: 1px solid grey;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
     outline: none;
@@ -226,3 +224,140 @@ img{
     margin-left: 10px;
     cursor: pointer;
 }
+.shimmer-card{
+    width: 290px;
+    height: 270px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: grey;
+}
+.shimmer{
+    margin-top: 50px;
+    flex:8 ;
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (max-width: 575.98px) {
+    .navbar {
+        
+        align-items: flex-start;
+        padding: 5px;
+    }
+    .navbar h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .input-flex {
+        width: auto;
+        margin-left: 0;
+        justify-content: flex-start;
+        
+    }
+    .input {
+        width: auto;
+        padding: 8px;
+        font-size: 14px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+
+
+        /* margin-bottom: 10px; */
+        margin-left: 5px;
+    }
+    .nav-btn {
+        width: auto;
+        padding: 8px;
+        font-size: 10px;
+        margin-left: 0;
+        align-items: center;
+    }
+    .bi-search{
+        font-size: 14px;
+        
+    }
+    .main-container {
+        flex-direction: column;
+    }
+    .left-container, .right-container {
+        width: auto;
+        height: auto;
+        box-sizing: border-box;
+    }
+    .left-container {
+        display: none; /* Hide left container for extra small screens */
+    }
+    .right-container {
+        flex: none;
+        padding: 10px;
+    }
+    .account-flex {
+        width: 100%;
+        justify-content: space-between;
+        margin-left: 0;
+        align-items: center;
+
+    }
+    .account {
+        width: 100%;
+        height: 23px;
+        padding: 5px;
+        font-size: 14px;
+        border-radius: 30px;
+        text-align: center;
+        margin-left: 3px;
+
+    
+    }
+    .global-btn{
+        width: 80px;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 5px;
+    }
+    .btn-flex{
+        width: 100%;
+        margin: 0px;
+        overflow-x: auto;
+
+    }
+    .video-container {
+        width: 100%;
+        height: auto;
+        margin: 0px 0;
+    }
+    .video-flex {
+        flex-direction: column;
+    }
+    .youtube-flex {
+        align-items: center;
+        align-items: center;
+        
+    }
+    .youtube {
+        margin-left: 0;
+        align-items: center;
+
+    }
+    .youtube h1{
+        margin-top: 10px;
+        font-size: 21px;
+    }
+    .bi-justify {
+        font-size: 24px;
+        margin: 0 5px;
+        
+    }
+    .record {
+        width: 24px;
+        height: 24px;
+        margin-left: 5px;
+    }
+    .bi-three-dots-vertical {
+        font-size: 20px;
+        margin-left: 1px;
+        margin-top: 4px;
+        text-align: center;
+    }
+}
+
+
